@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="alarm-list list-group">
+    <div *ngFor="let alarm of list | async" class="list-group-item flex-row">
+      <div class="list-item-icon">
+        <c8y-alarm-icon [severity]="alarm?.severity"></c8y-alarm-icon>
+      </div>
+      <div class="list-item-body">
+        <span class="badge badge-danger" *ngIf="alarm?.count > 1">{{
+          alarm?.count
+        }}</span>
+        {{ alarm?.text }}
+      </div>
+    </div>
+  </div>
+</div>
